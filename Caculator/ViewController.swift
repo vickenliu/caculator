@@ -26,7 +26,12 @@ class ViewController: UIViewController {
         let digit = sender.currentTitle!
         if middleOfTyping {
             let currentDisplay = display.text!
-            display.text = currentDisplay + digit
+            if currentDisplay != "0" {
+                display.text = currentDisplay + digit
+            } else {
+                display.text = digit
+            }
+            
         } else {
             display.text = digit
             middleOfTyping = true
