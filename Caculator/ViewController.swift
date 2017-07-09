@@ -10,8 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
     var middleOfTyping = false
-    var selectedOperator = "+"
-    var firstNumber = 0.0
+
     @IBOutlet weak var display: UILabel!
     var displayValue: Double {
         get {
@@ -31,7 +30,6 @@ class ViewController: UIViewController {
             } else {
                 display.text = digit
             }
-            
         } else {
             display.text = digit
             middleOfTyping = true
@@ -39,37 +37,21 @@ class ViewController: UIViewController {
     }
     
     @IBAction func perform(_ sender: UIButton) {
-        selectedOperator = sender.currentTitle!
-        if display.text! != "Error" {
-            firstNumber = displayValue
-        } else {
-            firstNumber = -0.00
+        if middleOfTyping {
+            engine.setAccumulator(displayValue)
+            middleOfTyping = false
         }
-        middleOfTyping = false;
+        if let selectedOperator = sender.currentTitle {
+            engine.performOperation(selectedOperator)
+        }
+        
+        if let result = engine.result {
+            displayValue = result
+        }
     }
     
-    @IBAction func showResult(_ sender: UIButton) {
-        middleOfTyping = false
-        if firstNumber == -0.00 || display.text! == "Error" {
-            display.text = "Error"
-            return
-        }
-        switch selectedOperator {
-            case "+":
-                displayValue = firstNumber + displayValue
-            case "-":
-                displayValue = firstNumber - displayValue
-            case "X":
-                displayValue = firstNumber * displayValue
-            case "÷":
-                if displayValue == 0 {
-                    display.text = "Error"
-                } else {
-                    displayValue = firstNumber / displayValue
-                }
-            default:
-                break
-        }
-    }
+    private var engine = CaculateEngine()
+    
+
 }
 
