@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -47,27 +47,17 @@
                                         <rect key="frame" x="0.0" y="93" width="288" height="83"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5LJ-ho-9mr">
-                                                <rect key="frame" x="0.0" y="0.0" width="64.5" height="83"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="89.5" height="83"/>
                                                 <color key="backgroundColor" red="0.67792866490000003" green="0.67792866490000003" blue="0.67792866490000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <state key="normal" title="𝜋">
+                                                <state key="normal" title="C">
                                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="perform:" destination="BYZ-38-t0r" eventType="touchUpInside" id="w5f-uR-lwN"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ndw-ut-aa1">
-                                                <rect key="frame" x="74.5" y="0.0" width="64.5" height="83"/>
-                                                <color key="backgroundColor" red="0.67792866490000003" green="0.67792866490000003" blue="0.67792866490000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <state key="normal" title="+/-">
-                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="digitTouched:" destination="BYZ-38-t0r" eventType="touchUpInside" id="irD-H2-o01"/>
-                                                </connections>
-                                            </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6SG-Sa-Idi">
-                                                <rect key="frame" x="149" y="0.0" width="64.5" height="83"/>
+                                                <rect key="frame" x="99.5" y="0.0" width="89" height="83"/>
                                                 <color key="backgroundColor" red="0.95967811346054077" green="0.69014829397201538" blue="0.21652397513389587" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" title="√">
                                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -77,7 +67,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jXF-N7-pWo">
-                                                <rect key="frame" x="223.5" y="0.0" width="64.5" height="83"/>
+                                                <rect key="frame" x="198.5" y="0.0" width="89.5" height="83"/>
                                                 <color key="backgroundColor" red="0.99942404029999998" green="0.69493506090000001" blue="0.22601313270000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <state key="normal" title="÷">

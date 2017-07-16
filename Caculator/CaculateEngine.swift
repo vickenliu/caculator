@@ -15,6 +15,7 @@ struct CaculateEngine {
         case unaryOperation((Double) -> Double)
         case binaryOpration((Double, Double) -> Double)
         case equal
+        case clear
     }
     private var operations = [
         "𝜋" : Oprations.const(Double.pi),
@@ -23,7 +24,8 @@ struct CaculateEngine {
         "÷" : Oprations.binaryOpration({$0 / $1}),
         "+" : Oprations.binaryOpration({$0 + $1}),
         "-" : Oprations.binaryOpration({$0 - $1}),
-        "=" : Oprations.equal
+        "=" : Oprations.equal,
+        "C" : Oprations.clear
     ]
     
     private struct PendingBinaryOperation {
@@ -51,7 +53,10 @@ struct CaculateEngine {
                         pendingBinaryOperation = PendingBinaryOperation(function: function, firstNumber: accumulator!)
                         accumulator = nil
                     }
-                case .equal:
+            case .clear:
+                    pendingBinaryOperation = nil
+                    accumulator = 0
+            case .equal:
                     if pendingBinaryOperation != nil && accumulator != nil {
                         accumulator = pendingBinaryOperation!.perform(with: accumulator!)
                         pendingBinaryOperation = nil
