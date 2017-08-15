@@ -49,7 +49,11 @@ struct CaculateEngine {
                         accumulator = function(accumulator!)
                     }
                 case .binaryOpration(let function):
-                    if accumulator != nil {
+                    if pendingBinaryOperation != nil && accumulator != nil {
+                        accumulator = pendingBinaryOperation!.perform(with: accumulator!)
+                        pendingBinaryOperation = PendingBinaryOperation(function: function, firstNumber: accumulator!)
+                    }
+                    if accumulator != nil && (pendingBinaryOperation == nil) {
                         pendingBinaryOperation = PendingBinaryOperation(function: function, firstNumber: accumulator!)
                         accumulator = nil
                     }
