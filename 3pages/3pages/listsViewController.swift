@@ -9,10 +9,38 @@
 import UIKit
 
 class listsViewController: UITableViewController {
-
+    
+    var lists: [AnyObject]? {
+        didSet {
+            print("i have set done")
+            tableView.reloadData()
+        }
+    }
+    
+    let url = URL(string: "https://api.themoviedb.org/3/discover/movie?api_key=a9cdd0e23d8a5391db7174cf0ad20f5e&language=en-US&sort_by=popularity.desc&include_adult=true&include_video=false&page=1")
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
+        URLSession.shared.dataTask(with: url!) { (data, response, err) in
+            if err != nil {
+                print("fetching data error")
+                return
+            }
+            guard let data = data else { return }
+            
+            do {
+                let response = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as AnyObject
+                let results = response["results"] as! NSArray
+                self.lists = results as [AnyObject]
+                print(results)
+            } catch let jsonErr {
+                print ("sterilize json error", jsonErr)
+            }
+            
+        }.resume()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -23,7 +51,10 @@ class listsViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 5
+        if let lists = lists {
+            return lists.count
+        }
+        return 0
     }
 
 
@@ -31,7 +62,7 @@ class listsViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "listCell", for: indexPath)
 
         // Configure the cell...
-        cell.textLabel?.text = "row number \(indexPath.row)"
+        cell.textLabel?.text = lists?[indexPath.row]["title"] as? String
         return cell
     }
 
@@ -70,14 +101,34 @@ class listsViewController: UITableViewController {
     }
     */
 
-    /*
+
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        if segue.identifier == "showDetail" {
+            let detailVC = segue.destination as? detailViewController
+//            if let cell = sender as? UITableViewCell {
+//                if indexPath = tableView.indexPath(for: cell) {
+//                    detailVC?.list = lists[indexPath.row]
+//                }
+//            }
+            guard let cell = sender as? UITableViewCell,
+                  let indexPath = tableView.indexPath(for: cell) else {
+                return
+            }
+            guard let selectedList = lists?[indexPath.row] else {
+                return
+            }
+            let list = List()
+            list.title = selectedList["title"] as? String
+            list.overview = selectedList["overview"] as? String
+            list.release_date = selectedList["release_date"] as? String
+            list.vote_average = selectedList["vote_average,"] as? Double
+            detailVC?.list = list
+        }
     }
-    */
 
 }

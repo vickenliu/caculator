@@ -10,15 +10,17 @@ import UIKit
 
 class aboutViewController: UIViewController {
 
+    @IBOutlet weak var scrollAboutView: UIScrollView!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        view.addSubview(scrollAboutView)
         // Do any additional setup after loading the view.
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        
+        scrollAboutView.contentSize = CGSize(width: 375, height: 1000)
     }
     
 

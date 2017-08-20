@@ -10,9 +10,18 @@ import UIKit
 
 class detailViewController: UIViewController {
 
+    var list: List?
+    
+    @IBOutlet weak var listName: UILabel!
+    @IBOutlet weak var listOverviw: UILabel!
+    @IBOutlet weak var listRate: UILabel!
+    @IBOutlet weak var listYear: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        listName.text = list?.title
+        listOverviw.text = list?.overview
+//        listRate.text = list?.vote_average
+        listYear.text = list?.release_date
         // Do any additional setup after loading the view.
     }
 

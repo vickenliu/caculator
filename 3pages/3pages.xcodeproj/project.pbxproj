@@ -14,6 +14,7 @@
 		436D607A1F483E0D002A6F0D /* listsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436D60791F483E0D002A6F0D /* listsViewController.swift */; };
 		436D607C1F483EBD002A6F0D /* detailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436D607B1F483EBD002A6F0D /* detailViewController.swift */; };
 		436D607E1F483F93002A6F0D /* aboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436D607D1F483F93002A6F0D /* aboutViewController.swift */; };
+		436D60801F4942DA002A6F0D /* List.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436D607F1F4942DA002A6F0D /* List.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		436D60791F483E0D002A6F0D /* listsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = listsViewController.swift; path = ../listsViewController.swift; sourceTree = "<group>"; };
 		436D607B1F483EBD002A6F0D /* detailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = detailViewController.swift; sourceTree = "<group>"; };
 		436D607D1F483F93002A6F0D /* aboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = aboutViewController.swift; sourceTree = "<group>"; };
+		436D607F1F4942DA002A6F0D /* List.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = List.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 		436D60641F483C0C002A6F0D /* 3pages */ = {
 			isa = PBXGroup;
 			children = (
+				436D607F1F4942DA002A6F0D /* List.swift */,
 				436D60791F483E0D002A6F0D /* listsViewController.swift */,
 				436D60651F483C0C002A6F0D /* AppDelegate.swift */,
 				436D60691F483C0C002A6F0D /* Main.storyboard */,
@@ -102,6 +105,7 @@
 				TargetAttributes = {
 					436D60611F483C0C002A6F0D = {
 						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = P7P428GTUM;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -145,6 +149,7 @@
 				436D607A1F483E0D002A6F0D /* listsViewController.swift in Sources */,
 				436D60661F483C0C002A6F0D /* AppDelegate.swift in Sources */,
 				436D607E1F483F93002A6F0D /* aboutViewController.swift in Sources */,
+				436D60801F4942DA002A6F0D /* List.swift in Sources */,
 				436D607C1F483EBD002A6F0D /* detailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -268,6 +273,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = P7P428GTUM;
 				INFOPLIST_FILE = 3pages/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "vickenliu.github.io.-pages";
@@ -280,6 +286,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = P7P428GTUM;
 				INFOPLIST_FILE = 3pages/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "vickenliu.github.io.-pages";
