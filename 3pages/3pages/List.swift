@@ -13,4 +13,5 @@ class List {
     var vote_average : Double?
     var release_date : String?
     var overview: String?
+    var listImageUrl: String?
 }

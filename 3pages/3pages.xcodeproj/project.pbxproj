@@ -15,6 +15,8 @@
 		436D607C1F483EBD002A6F0D /* detailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436D607B1F483EBD002A6F0D /* detailViewController.swift */; };
 		436D607E1F483F93002A6F0D /* aboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436D607D1F483F93002A6F0D /* aboutViewController.swift */; };
 		436D60801F4942DA002A6F0D /* List.swift in Sources */ = {isa = PBXBuildFile; fileRef = 436D607F1F4942DA002A6F0D /* List.swift */; };
+		43F61D9B1F52A5D00034EB2F /* ToDoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F61D9A1F52A5D00034EB2F /* ToDoViewController.swift */; };
+		43F61DA01F64E75D0034EB2F /* extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43F61D9F1F64E75D0034EB2F /* extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		436D607B1F483EBD002A6F0D /* detailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = detailViewController.swift; sourceTree = "<group>"; };
 		436D607D1F483F93002A6F0D /* aboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = aboutViewController.swift; sourceTree = "<group>"; };
 		436D607F1F4942DA002A6F0D /* List.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = List.swift; sourceTree = "<group>"; };
+		43F61D9A1F52A5D00034EB2F /* ToDoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoViewController.swift; sourceTree = "<group>"; };
+		43F61D9F1F64E75D0034EB2F /* extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = extension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,17 +64,35 @@
 		436D60641F483C0C002A6F0D /* 3pages */ = {
 			isa = PBXGroup;
 			children = (
+				43F61D9E1F64E7350034EB2F /* extension */,
+				43F61D951F52A07D0034EB2F /* controllers */,
 				436D607F1F4942DA002A6F0D /* List.swift */,
-				436D60791F483E0D002A6F0D /* listsViewController.swift */,
 				436D60651F483C0C002A6F0D /* AppDelegate.swift */,
 				436D60691F483C0C002A6F0D /* Main.storyboard */,
-				436D607D1F483F93002A6F0D /* aboutViewController.swift */,
-				436D607B1F483EBD002A6F0D /* detailViewController.swift */,
 				436D606C1F483C0C002A6F0D /* Assets.xcassets */,
 				436D606E1F483C0C002A6F0D /* LaunchScreen.storyboard */,
 				436D60711F483C0C002A6F0D /* Info.plist */,
 			);
 			path = 3pages;
+			sourceTree = "<group>";
+		};
+		43F61D951F52A07D0034EB2F /* controllers */ = {
+			isa = PBXGroup;
+			children = (
+				436D60791F483E0D002A6F0D /* listsViewController.swift */,
+				436D607B1F483EBD002A6F0D /* detailViewController.swift */,
+				436D607D1F483F93002A6F0D /* aboutViewController.swift */,
+				43F61D9A1F52A5D00034EB2F /* ToDoViewController.swift */,
+			);
+			name = controllers;
+			sourceTree = "<group>";
+		};
+		43F61D9E1F64E7350034EB2F /* extension */ = {
+			isa = PBXGroup;
+			children = (
+				43F61D9F1F64E75D0034EB2F /* extension.swift */,
+			);
+			name = extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -147,9 +169,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				436D607A1F483E0D002A6F0D /* listsViewController.swift in Sources */,
+				43F61DA01F64E75D0034EB2F /* extension.swift in Sources */,
 				436D60661F483C0C002A6F0D /* AppDelegate.swift in Sources */,
 				436D607E1F483F93002A6F0D /* aboutViewController.swift in Sources */,
 				436D60801F4942DA002A6F0D /* List.swift in Sources */,
+				43F61D9B1F52A5D00034EB2F /* ToDoViewController.swift in Sources */,
 				436D607C1F483EBD002A6F0D /* detailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -314,6 +338,7 @@
 				436D60761F483C0C002A6F0D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

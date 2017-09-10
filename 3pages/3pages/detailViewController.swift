@@ -16,12 +16,19 @@ class detailViewController: UIViewController {
     @IBOutlet weak var listOverviw: UILabel!
     @IBOutlet weak var listRate: UILabel!
     @IBOutlet weak var listYear: UILabel!
+    @IBOutlet weak var listImag: UIImageView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         listName.text = list?.title
         listOverviw.text = list?.overview
 //        listRate.text = list?.vote_average
         listYear.text = list?.release_date
+        if let imageUrl = list?.listImageUrl {
+            listImag.loadImage(urlString: imageUrl)
+            listImag.contentMode = .scaleAspectFit
+        }
+        
         // Do any additional setup after loading the view.
     }
 
