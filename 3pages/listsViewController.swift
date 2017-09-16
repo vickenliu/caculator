@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import NVActivityIndicatorView
 
-class listsViewController: UITableViewController {
+class listsViewController: UITableViewController, NVActivityIndicatorViewable {
     
     var lists: [AnyObject]? {
         didSet {
@@ -22,13 +23,15 @@ class listsViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         
+        NVActivityIndicatorView.DEFAULT_TYPE = .lineScaleParty
+        startAnimating()
         URLSession.shared.dataTask(with: url!) { (data, response, err) in
             if err != nil {
                 print("fetching data error")
                 return
             }
+            self.stopAnimating()
             guard let data = data else { return }
             
             do {
