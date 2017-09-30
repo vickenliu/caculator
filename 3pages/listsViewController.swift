@@ -27,11 +27,12 @@ class listsViewController: UITableViewController, NVActivityIndicatorViewable {
         NVActivityIndicatorView.DEFAULT_TYPE = .lineScaleParty
         startAnimating()
         URLSession.shared.dataTask(with: url!) { (data, response, err) in
+            self.stopAnimating()
+            
             if err != nil {
                 print("fetching data error")
                 return
             }
-            self.stopAnimating()
             guard let data = data else { return }
             
             do {
