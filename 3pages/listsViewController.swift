@@ -7,9 +7,9 @@
 //
 
 import UIKit
-import NVActivityIndicatorView
+import SwiftSpinner
 
-class listsViewController: UITableViewController, NVActivityIndicatorViewable {
+class listsViewController: UITableViewController {
     
     var lists: [AnyObject]? {
         didSet {
@@ -24,15 +24,13 @@ class listsViewController: UITableViewController, NVActivityIndicatorViewable {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        NVActivityIndicatorView.DEFAULT_TYPE = .lineScaleParty
-        startAnimating()
+        SwiftSpinner.show("Connecting to satellite...")
         URLSession.shared.dataTask(with: url!) { (data, response, err) in
-            self.stopAnimating()
-            
             if err != nil {
                 print("fetching data error")
                 return
             }
+            SwiftSpinner.hide()
             guard let data = data else { return }
             
             do {

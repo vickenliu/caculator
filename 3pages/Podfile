@@ -6,6 +6,6 @@ target '3pages' do
   use_frameworks!
 
   # Pods for 3pages
-  pod 'NVActivityIndicatorView'
+  pod 'SwiftSpinner'
 
 end
